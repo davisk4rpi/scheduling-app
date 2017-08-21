@@ -4,8 +4,15 @@
   "description": "An app to help organize your schedule and coordinate meetings with others",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongoose": "^4.11.7",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0"
+  }
 }
