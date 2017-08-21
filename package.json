@@ -1,0 +1,11 @@
+{
+  "name": "calendar_app",
+  "version": "1.0.0",
+  "description": "An app to help organize your schedule and coordinate meetings with others",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
