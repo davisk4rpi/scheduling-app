@@ -1,0 +1,293 @@
+@import 'materialize-css/sass/components/color';
+$primary-color: color("blue-grey", "base") !default;
+$primary-color-light: lighten($primary-color, 15%) !default;
+$primary-color-dark: darken($primary-color, 15%) !default;
+
+$secondary-color: color("cyan", "lighten-1") !default;
+$secondary-color-dark: darken($secondary-color, 15%) !default;
+$input-success-color: color("green", "base") !default;
+$input-error-color: color("red", "base") !default;
+$link-color: color("blue", "darken-3") !default;
+
+$sidenav-font-color: $secondary-color !default;
+
+$dropdown-bg-color: #fff !default;
+$dropdown-hover-bg-color: #eee !default;
+$dropdown-color: $secondary-color !default;
+$roboto-font-path: "./fonts/roboto/" !default;
+@import 'materialize-css/sass/materialize.scss';
+
+$background-color-dark: color("grey", "lighten-2");
+$background-color-light: color("grey", "lighten-4");
+
+// General
+body {
+  background-color: $background-color-light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $secondary-color-dark;
+  font-weight: 500;
+}
+
+hr {
+  border: 1px solid $primary-color-light;
+}
+
+nav {
+  background-color: $background-color-light;
+  ul {
+    a {
+      color: $primary-color;
+      font-weight: 500;
+    }
+  }
+}
+
+.bold {
+  font-weight: 400;
+}
+
+.extra-bold {
+  font-weight: 500;
+}
+
+.social-media {
+  display: inline-block;
+  width: 36px;
+  border-radius: 5px;
+  margin: auto 8px;
+}
+
+// Navigation
+#header {
+  .brand-logo {
+    line-height: normal;
+    div {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-top: -5px;
+    }
+  }
+
+  .nav-wrapper {
+    a {
+      @extend .valign-wrapper;
+      @media #{$medium-and-up} {
+        height: 64px;
+      }
+      height: 56px;
+    }
+    .material-icons.md-36 {
+      font-size: 36px;
+      color: $secondary-color-dark;
+    }
+  }
+  .active-nav {
+    background-color: $secondary-color-dark;
+    color: $background-color-light;
+    .material-icons.md-36 {
+      color: $background-color-light;
+    }
+  }
+}
+
+// Footer
+#footer.page-footer {
+  color: darken($secondary-color, 10%);
+  a:hover {
+    h6 {
+      color: darken($secondary-color, 10%);
+    }
+  }
+  background-color: $background-color-dark;
+  li,
+  a {
+    display: inline-block;
+  }
+  .social-media {
+    margin: 8px;
+  }
+}
+
+// Menu Transitions
+#menu-btn {
+  display: inline-block;
+  i {
+    color: $secondary-color-dark;
+    line-height: inherit;
+  }
+  button {
+    margin-left: 10px;
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  background-color: $background-color-dark;
+  width: 300px;
+  margin-top: 10px;
+  left: 10px;
+  @media #{$small-and-down} {
+    margin: auto;
+    margin-top: 10px;
+  }
+  ul {
+    margin-top: 0px;
+    li {
+      @extend .hoverable;
+      a {
+        display: inline-block;
+        padding: 10px;
+        width: 100%;
+        color: $secondary-color-dark;
+      }
+    }
+  }
+}
+
+.menu-enter {
+  max-height: 0px;
+  overflow: hidden;
+}
+.menu-enter-active {
+  max-height: 200px;
+  -webkit-transition: max-height .5s ease-in;
+  transition: all .5s ease-in;
+}
+
+.menu-leave {
+  opacity: 1;
+}
+.menu-leave-active {
+  opacity: 0.01;
+  -webkit-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+}
+
+// home page
+.skills {
+  margin-bottom: 10px;
+}
+
+#headshot-img {
+  display: block;
+  margin: 0px auto;
+  max-height: 400px;
+  border-radius: 5px;
+  @extend .z-depth-2;
+}
+
+@media #{$large-and-up} {
+  .flex-center {
+    display: flex;
+    align-items: center;
+  }
+}
+
+#home-page {
+  .btn-flat {
+    background-color: $background-color-dark;
+    color: $secondary-color-dark;
+    margin: 5px;
+    @extend .hoverable;
+  }
+}
+
+.email-link {
+  color: $primary-color-dark;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+// Work pages
+
+#work-header {
+  .btn-flat {
+    background-color: $background-color-dark;
+    color: $secondary-color-dark;
+    margin: 5px;
+    @extend .hoverable;
+  }
+  .btn-flat.active-btn {
+    color: $background-color-dark;
+    background-color: $secondary-color-dark;
+    -webkit-box-shadow: inset 0px 2px 6px #ccc, inset 2px 0px 6px #ccc;
+    box-shadow: inset 0px 2px 6px #ccc, inset 2px 0px 6px #ccc;
+  }
+}
+
+#work-page {
+  @media #{$large-and-up} {
+    p {
+      font-size: 22px;
+    }
+  }
+  @media #{$medium-and-down} {
+    p {
+      font-size: 16px;
+    }
+  }
+  @media #{$medium-and-up} {
+    .flex-center {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.slow-fade-enter {
+  opacity: 0;
+}
+.slow-fade-enter.slow-fade-enter-active {
+  opacity: 1;
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
+
+.slow-fade-leave {
+  opacity: 1;
+}
+.slow-fade-leave-active {
+  opacity: 0.01;
+  -webkit-transition: all .25s ease-out;
+  transition: all .25s ease-out;
+}
+
+.work-link {
+  display: inline-block;
+  padding: 5px;
+  @extend .hoverable;
+}
+
+.work-img {
+  max-height: 200px;
+  max-width: 100%;
+  padding: 5px;
+  display: block;
+  margin: 0 auto;
+}
+
+#Ruby-Logo {
+  max-height: 150px;
+  margin: auto;
+}
+
+#React-Logo {
+  animation: App-logo-spin infinite 20s linear;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
