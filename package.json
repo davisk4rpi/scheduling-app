@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "An app to help organize your schedule and coordinate meetings with others",
   "main": "index.js",
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.0.3"
+  },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
+    "test": "nodemon --exec 'mocha -R min'",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
@@ -15,6 +20,7 @@
   "dependencies": {
     "concurrently": "^3.5.0",
     "express": "^4.15.4",
+    "mocha": "^3.5.0",
     "mongoose": "^4.11.7",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0"
