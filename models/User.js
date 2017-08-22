@@ -9,7 +9,18 @@ const UserSchema = new Schema({
   },
   email: String,
   googleId: String,
-  events: [EventSchema]
+  createdEvents: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'event'
+    }
+  ],
+  invitedEvents: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'event'
+    }
+  ]
 });
 
 const User = mongoose.model('user', UserSchema);

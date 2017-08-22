@@ -22,3 +22,12 @@ before(done => {
       console.warn('Warning', error);
     });
 });
+
+beforeEach(done => {
+  const { users, events } = mongoose.connection.collections;
+  users.drop(() => {
+    events.drop(() => {
+      done();
+    });
+  });
+});

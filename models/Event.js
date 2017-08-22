@@ -7,4 +7,6 @@ const EventSchema = new Schema({
   endTime: Date
 });
 
-module.exports = EventSchema;
+const Event = mongoose.model('event', EventSchema);
+
+module.exports = Event;
