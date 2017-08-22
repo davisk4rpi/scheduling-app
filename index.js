@@ -10,5 +10,7 @@ mongoose.connect(keys.mongoURI, {
 
 const app = express();
 
-const PORT = 5000;
+// dynamically figures out which port to point to
+const PORT = process.env.PORT || 5000;
+app.listen(PORT);
 app.listen(PORT);
