@@ -29,9 +29,9 @@
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start": "react-scripts start",
-    "react-build": "react-scripts build",
+    "build": "react-scripts build",
     "dev-start": "npm-run-all -p watch-css start",
-    "build": "npm run build-css && react-scripts build",
+    "dev-build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
