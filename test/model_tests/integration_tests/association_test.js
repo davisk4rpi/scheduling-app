@@ -12,7 +12,7 @@ describe('Associations', () => {
     event = new Event({
       name: 'Work on Schedulizer',
       startTime: Date.now() + 3600,
-      endTime: Date.now() + 7200
+      duration: 60
     });
 
     craig.createdEvents.push(event);
