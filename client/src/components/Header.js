@@ -25,7 +25,7 @@ class Header extends Component {
             <Link to="/settings">Settings</Link>
           </li>,
           <li key="3">
-            <Link to="/settings">Dashboard</Link>
+            <Link to="/dashboard">Dashboard</Link>
           </li>
         ];
     }

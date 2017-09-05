@@ -7,6 +7,7 @@ import * as actions from '../actions';
 import Landing from './Landing';
 import Header from './Header';
 import Login from './Login';
+import Dashboard from './Dashboard';
 import EventNew from './events/EventNew';
 
 class App extends Component {
@@ -36,7 +37,7 @@ class App extends Component {
                   return <Login message="Sign up" {...props} />;
                 }}
               />
-              <Route exact path="/events/new" component={EventNew} />
+              <Route exact path="/dashboard" component={Dashboard} />
             </div>
           </div>
         </MuiThemeProvider>
