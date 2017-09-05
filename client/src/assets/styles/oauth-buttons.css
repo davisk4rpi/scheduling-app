@@ -1,5 +1,9 @@
 /* Shared */
 .loginBtn {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
   box-sizing: border-box;
   position: relative;
   /* width: 13em;  - apply for fixed size */

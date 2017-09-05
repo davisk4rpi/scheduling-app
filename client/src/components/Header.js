@@ -22,10 +22,10 @@ class Header extends Component {
             <a href="/api/logout">Logout</a>
           </li>,
           <li key="2">
-            <Link>Settings</Link>
+            <Link to="/settings">Settings</Link>
           </li>,
           <li key="3">
-            <Link>Dashboard</Link>
+            <Link to="/settings">Dashboard</Link>
           </li>
         ];
     }

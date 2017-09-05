@@ -11,21 +11,6 @@ import {
 } from 'redux-form-material-ui';
 import { RadioButton } from 'material-ui/RadioButton';
 import MenuItem from 'material-ui/MenuItem';
-import formFields from './formFields';
-import EventTextField from './EventTextField';
-import EventDateField from './EventDateField';
-
-const cformFields = [
-  { label: 'Event Title', subLabel: 'required', name: 'name' },
-  { label: 'Description', subLabel: 'required', name: 'description' },
-  { label: 'Duration', subLabel: 'required', name: 'duration' },
-  {
-    label: 'Start Time',
-    subLabel:
-      'Events without a start time will just be added to your To Do List',
-    name: 'startTime'
-  }
-];
 
 class EventForm extends Component {
   constructor(props) {
@@ -146,49 +131,6 @@ class EventForm extends Component {
         />
       );
     }
-
-    const xxx = [
-      <Field
-        key="name"
-        type="text"
-        name="name"
-        component={EventTextField}
-        label="Event Title"
-        subLabel="required"
-      />,
-      <Field
-        key="description"
-        type="text"
-        name="description"
-        component={EventTextField}
-        label="Description"
-        subLabel="required"
-      />,
-      <Field
-        key="duration"
-        type="number"
-        name="duration"
-        component={EventTextField}
-        label="Duration"
-        subLabel="required, estimate"
-      />,
-      <Field
-        key="startTimeDate"
-        name="startTimeDate"
-        label="Date"
-        hintText="What day does it start?"
-        component={DatePicker}
-        format={null}
-      />,
-      <Field
-        key="startTimeTime"
-        name="startTimeTime"
-        label="Time"
-        hintText="What time does it start?"
-        component={TimePicker}
-        format={null}
-      />
-    ];
     return fields;
   }
 

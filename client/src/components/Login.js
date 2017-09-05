@@ -4,13 +4,13 @@ const Login = props => {
   console.log(props);
   return (
     <div>
-      <button className="loginBtn loginBtn--facebook">
+      <a className="loginBtn loginBtn--facebook" href="/auth/facebook">
         {props.message} with Facebook
-      </button>
+      </a>
 
-      <button className="loginBtn loginBtn--google">
+      <a className="loginBtn loginBtn--google" href="/auth/google">
         {props.message} with Google
-      </button>
+      </a>
     </div>
   );
 };
