@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchEvents } from '../../actions';
+import { fetchEvents, deleteEvent } from '../../actions';
 
 class EventList extends Component {
   componentDidMount() {
@@ -11,20 +11,22 @@ class EventList extends Component {
     return this.props.events.map(event => {
       let date;
       if (event.calendarCheck) {
+        const time = new Date(event.startTime);
         date = (
           <div className="card-action">
-            <a>
-              Yes: {event.yes}
-            </a>
-            <a>
-              No: {event.no}
-            </a>
+            {time.toLocaleDateString()} at {time.toLocaleTimeString()}
           </div>
         );
       }
       return (
         <div className="card darken-1 blue-grey" key={event._id}>
           <div className="card-content white-text">
+            <button
+              className="btn"
+              onClick={() => this.props.deleteEvent(event._id)}
+            >
+              delete
+            </button>
             <span className="card-title">
               {event.name}
             </span>
@@ -32,7 +34,7 @@ class EventList extends Component {
               {event.description}
             </p>
             <p className="right">
-              Estimated Time: {event.duration}
+              Estimated Time: {event.duration} min
             </p>
           </div>
           {date}
@@ -54,4 +56,6 @@ function mapStateToProps({ events }) {
   return { events };
 }
 
-export default connect(mapStateToProps, { fetchEvents })(EventList);
+export default connect(mapStateToProps, { fetchEvents, deleteEvent })(
+  EventList
+);

@@ -15,7 +15,11 @@ export const submitEvent = (values, history) => async dispatch => {
 };
 
 export const fetchEvents = () => async dispatch => {
-  console.log('here');
   const res = await axios.get('/api/events');
+  dispatch({ type: FETCH_EVENTS, payload: res.data });
+};
+
+export const deleteEvent = id => async dispatch => {
+  const res = await axios.delete(`/api/events/${id}`);
   dispatch({ type: FETCH_EVENTS, payload: res.data });
 };

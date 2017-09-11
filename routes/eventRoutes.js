@@ -55,4 +55,21 @@ module.exports = app => {
       res.status(422).send(err);
     }
   });
+
+  app.delete('/api/events/:id', requireLogin, async (req, res) => {
+    const user = await User.findById(req.user.id);
+    const event = await Event.findById(req.params.id);
+    console.log(user);
+    const eventIds = user.createdEvents.map(id => {
+      return id === req.params.id ? null : id;
+    });
+    await user.update({ createdEvents: eventIds });
+    await event.remove();
+    const events = await Event.find({
+      _id: {
+        $in: eventIds
+      }
+    });
+    res.send(events);
+  });
 };
