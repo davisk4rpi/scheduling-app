@@ -5,6 +5,16 @@ const User = mongoose.model('user');
 const Event = mongoose.model('event');
 
 module.exports = app => {
+  app.get('/api/events', requireLogin, async (req, res) => {
+    const user = await User.findById(req.user.id);
+    const eventIds = user.createdEvents;
+    const events = await Event.find({
+      _id: {
+        $in: eventIds
+      }
+    });
+    res.send(events);
+  });
   app.post('/api/events', requireLogin, async (req, res) => {
     let {
       description,

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import EventList from './events/EventList';
+
 class Dashboard extends Component {
   renderEvents() {
     return [
@@ -14,9 +16,7 @@ class Dashboard extends Component {
     return (
       <section>
         <Link to="/events/new">New Event</Link>
-        <ul>
-          {this.renderEvents()}
-        </ul>
+        <EventList />
       </section>
     );
   }
