@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {
   renderEvents() {
@@ -12,6 +13,7 @@ class Dashboard extends Component {
   render() {
     return (
       <section>
+        <Link to="/events/new">New Event</Link>
         <ul>
           {this.renderEvents()}
         </ul>

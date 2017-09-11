@@ -29,6 +29,7 @@ app.use(passport.session());
 
 // shorthand version instead of assign the 'require' to a const first.
 require('./routes/authRoutes')(app);
+require('./routes/eventRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets

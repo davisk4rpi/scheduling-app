@@ -5,7 +5,8 @@ const EventSchema = new Schema({
   name: String,
   description: String,
   duration: Number,
-  startTime: Date
+  startTime: Date,
+  calendarCheck: { type: Boolean, default: false }
 });
 
 // Use 'function()' instead of '=>' to maintain scope to 'this' of the specific user

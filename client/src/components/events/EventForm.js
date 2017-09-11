@@ -1,5 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { reduxForm, Field } from 'redux-form';
 import {
   TextField,
@@ -11,6 +13,8 @@ import {
 } from 'redux-form-material-ui';
 import { RadioButton } from 'material-ui/RadioButton';
 import MenuItem from 'material-ui/MenuItem';
+
+import * as actions from '../../actions';
 
 class EventForm extends Component {
   constructor(props) {
@@ -64,8 +68,8 @@ class EventForm extends Component {
         rows={3}
       />,
       <Field
-        key="durationRadio"
-        name="durationRadio"
+        key="durationUnit"
+        name="durationUnit"
         component={RadioButtonGroup}
         defaultValue={this.state.durationUnit}
         onChange={this.onRadioChange}
@@ -101,8 +105,8 @@ class EventForm extends Component {
     }
     fields.push(
       <Field
-        key="todo"
-        name="todoCheckbox"
+        key="calendar"
+        name="calendarCheck"
         label="Check this to add task to your calendar"
         component={Checkbox}
         onChange={this.onTodoCheck}
@@ -134,12 +138,23 @@ class EventForm extends Component {
     return fields;
   }
 
+  onSurveySubmit = (values, dispatch) => {
+    console.log(values);
+    this.props.submitEvent(values, this.props.history);
+  };
+
   render() {
     return (
       <div>
         <h2>New Task</h2>
-        <form onSubmit={this.props.handleSubmit}>
+        <form onSubmit={this.props.handleSubmit(this.onSurveySubmit)}>
           {this.renderFields()}
+          <button className="btn-flat" onClick={() => {}}>
+            Clear
+          </button>
+          <button type="submit" className="btn-flat right">
+            Add Event
+          </button>
         </form>
       </div>
     );
@@ -151,10 +166,12 @@ function validate(values) {
   return errors;
 }
 
-export default reduxForm({
+EventForm = reduxForm({
   validate,
   form: 'eventForm',
   initialValues: {
-    durationRadio: 'minutes'
+    durationUnit: 'minutes'
   }
 })(EventForm);
+
+export default connect(null, actions)(withRouter(EventForm));

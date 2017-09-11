@@ -38,6 +38,7 @@ class App extends Component {
                 }}
               />
               <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/events/new" component={EventNew} />
             </div>
           </div>
         </MuiThemeProvider>
