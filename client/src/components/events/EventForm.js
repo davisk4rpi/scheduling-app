@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { reduxForm, Field } from 'redux-form';
 import {
   TextField,
@@ -14,19 +13,21 @@ import {
 import { RadioButton } from 'material-ui/RadioButton';
 import MenuItem from 'material-ui/MenuItem';
 
-import * as actions from '../../actions';
-
 class EventForm extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       todo: false,
       durationUnit: 'minutes'
     };
-
     this.onRadioChange = this.onRadioChange.bind(this);
     this.onTodoCheck = this.onTodoCheck.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.todo && !this.state.todo) {
+      this.onTodoCheck();
+    }
   }
 
   renderDuration(unit, inc) {
@@ -138,22 +139,17 @@ class EventForm extends Component {
     return fields;
   }
 
-  onSurveySubmit = (values, dispatch) => {
-    console.log(values);
-    this.props.submitEvent(values, this.props.history);
-  };
-
   render() {
     return (
       <div>
         <h2>New Task</h2>
-        <form onSubmit={this.props.handleSubmit(this.onSurveySubmit)}>
+        <form onSubmit={this.props.handleSubmit(this.props.handleEventSubmit)}>
           {this.renderFields()}
-          <button className="btn-flat" onClick={() => {}}>
-            Clear
-          </button>
-          <button type="submit" className="btn-flat right">
-            Add Event
+          <Link className="btn-flat red white-text" to="/dashboard">
+            Cancel
+          </Link>
+          <button type="submit" className="btn-flat right blue white-text">
+            {this.props.submitButton}
           </button>
         </form>
       </div>
@@ -168,10 +164,7 @@ function validate(values) {
 
 EventForm = reduxForm({
   validate,
-  form: 'eventForm',
-  initialValues: {
-    durationUnit: 'minutes'
-  }
+  form: 'eventForm'
 })(EventForm);
 
-export default connect(null, actions)(withRouter(EventForm));
+export default EventForm;

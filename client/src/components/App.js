@@ -9,6 +9,7 @@ import Header from './Header';
 import Login from './Login';
 import Dashboard from './Dashboard';
 import EventNew from './events/EventNew';
+import EventEdit from './events/EventEdit';
 
 class App extends Component {
   componentDidMount() {
@@ -39,6 +40,7 @@ class App extends Component {
               />
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/events/new" component={EventNew} />
+              <Route exact path="/events/:id/edit" component={EventEdit} />
             </div>
           </div>
         </MuiThemeProvider>

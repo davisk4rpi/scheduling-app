@@ -1,10 +1,16 @@
-import { FETCH_EVENTS } from '../actions/types';
+import { FETCH_EVENTS, FETCH_EVENT } from '../actions/types';
 
-export default function(state = [], action) {
+export default function(state = {}, action) {
+  let initialState = {
+    ...state,
+    index: []
+  };
   switch (action.type) {
     case FETCH_EVENTS:
-      return action.payload;
+      return { ...state, index: action.payload };
+    case FETCH_EVENT:
+      return { ...initialState, eventInitialValues: action.payload };
     default:
-      return state;
+      return initialState;
   }
 }

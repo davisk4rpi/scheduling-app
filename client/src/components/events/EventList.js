@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchEvents, deleteEvent } from '../../actions';
 
 class EventList extends Component {
@@ -21,11 +22,18 @@ class EventList extends Component {
       return (
         <div className="card darken-1 blue-grey" key={event._id}>
           <div className="card-content white-text">
+
             <button
               className="btn red right"
               onClick={() => this.props.deleteEvent(event._id)}
             >
               delete
+            </button>
+            <button
+              className="btn red blue right"
+              onClick={() => this.props.history.push(`/events/${event._id}/edit`)}
+            >
+              edit
             </button>
             <span className="card-title">
               {event.name}
@@ -53,9 +61,9 @@ class EventList extends Component {
 }
 
 function mapStateToProps({ events }) {
-  return { events };
+  return { events: events.index };
 }
 
 export default connect(mapStateToProps, { fetchEvents, deleteEvent })(
-  EventList
+  withRouter(EventList)
 );
