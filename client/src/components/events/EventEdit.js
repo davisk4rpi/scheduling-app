@@ -34,6 +34,7 @@ class EventEdit extends Component {
         (startTimeDate.getHours() * 60 + startTimeDate.getMinutes()) *
         60 *
         1000;
+      console.log(startTime);
       startTimeDate = new Date(startTimeDate - time);
       values = {
         description,
