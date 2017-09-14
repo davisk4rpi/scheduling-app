@@ -22,7 +22,7 @@ class EventList extends Component {
         <div className="card darken-1 blue-grey" key={event._id}>
           <div className="card-content white-text">
             <button
-              className="btn"
+              className="btn red right"
               onClick={() => this.props.deleteEvent(event._id)}
             >
               delete
