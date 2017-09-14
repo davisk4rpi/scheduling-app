@@ -36,8 +36,6 @@ class EventEdit extends Component {
         1000;
 
       startTimeDate = new Date(startTimeDate - time);
-      console.log(startTimeDate);
-      console.log(startTimeTime);
       values = {
         description,
         name,
