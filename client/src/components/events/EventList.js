@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchEvents, deleteEvent } from '../../actions';
 
+import EventShow from './EventShow';
+
 class EventList extends Component {
   componentDidMount() {
     this.props.fetchEvents();
@@ -20,33 +22,14 @@ class EventList extends Component {
         );
       }
       return (
-        <div className="card darken-1 blue-grey" key={event._id}>
-          <div className="card-content white-text">
-
-            <button
-              className="btn red right"
-              onClick={() => this.props.deleteEvent(event._id)}
-            >
-              delete
-            </button>
-            <button
-              className="btn red blue right"
-              onClick={() => this.props.history.push(`/events/${event._id}/edit`)}
-            >
-              edit
-            </button>
-            <span className="card-title">
-              {event.name}
-            </span>
-            <p>
-              {event.description}
-            </p>
-            <p className="right">
-              Estimated Time: {event.duration} min
-            </p>
-          </div>
-          {date}
-        </div>
+        <EventShow
+          key={event._id}
+          event={event}
+          date={date}
+          onDeleteClick={() => this.props.deleteEvent(event._id)}
+          onEditClick={() =>
+            this.props.history.push(`/events/${event._id}/edit`)}
+        />
       );
     });
   }

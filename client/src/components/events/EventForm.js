@@ -52,9 +52,8 @@ class EventForm extends Component {
 
   renderFields() {
     const fields = [
-      <div>
+      <div key="name">
         <Field
-          key="name"
           hintText="ex: Call Doctor's Office"
           floatingLabelText="Task Title"
           name="name"
@@ -133,9 +132,8 @@ class EventForm extends Component {
         />
       );
       fields.push(
-        <div className="startTime">
+        <div className="startTime" key="startTimeTime">
           <Field
-            key="startTimeTime"
             name="startTimeTime"
             label="Time"
             hintText="What time does it start?"
