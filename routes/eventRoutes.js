@@ -87,10 +87,8 @@ module.exports = app => {
     const user = await User.findById(req.user.id);
     const event = await Event.findById(req.params.id);
     const eventIds = user.createdEvents.filter(id => {
-      console.log(id.toString() !== req.params.id);
       return id.toString() !== req.params.id;
     });
-    console.log(eventIds);
     await user.update({ createdEvents: eventIds });
     await event.remove();
     const events = await Event.find({

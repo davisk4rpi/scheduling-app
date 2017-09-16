@@ -159,6 +159,10 @@ class EventForm extends Component {
 
 function validate(values) {
   const errors = {};
+
+  if (!values['name']) {
+    errors['name'] = 'You must provide a Title';
+  }
   return errors;
 }
 
