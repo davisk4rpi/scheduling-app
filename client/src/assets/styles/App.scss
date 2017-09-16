@@ -5,6 +5,9 @@ $primary-color-dark: darken($primary-color, 15%) !default;
 
 $secondary-color: color("indigo", "base") !default;
 $secondary-color-dark: darken($secondary-color, 15%) !default;
+// for the form placeholder text
+$input-border-color: $primary-color !important;
+
 $input-success-color: color("green", "base") !default;
 $input-error-color: color("red", "base") !default;
 $link-color: color("blue", "darken-3") !default;
@@ -17,8 +20,8 @@ $dropdown-color: $secondary-color !default;
 $roboto-font-path: "./fonts/roboto/" !default;
 @import 'materialize-css/sass/materialize.scss';
 
-$background-color-dark: color("light-blue", "lighten-2");
-$background-color-light: color("light-blue", "lighten-4");
+$background-color-dark: color("grey", "base");
+$background-color-light: color("grey", "lighten-3");
 
 @import './oauth-buttons.css';
 @import './events.scss';

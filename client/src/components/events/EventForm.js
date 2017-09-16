@@ -58,6 +58,7 @@ class EventForm extends Component {
           floatingLabelText="Task Title"
           name="name"
           component={TextField}
+          floatingLabelStyle={{ color: 'black' }}
         />
       </div>,
       <Field
@@ -66,6 +67,7 @@ class EventForm extends Component {
         component={TextField}
         hintText="ex: Need to make appointment for..."
         floatingLabelText="Task Description"
+        floatingLabelStyle={{ color: 'black' }}
         fullWidth
         multiLine
         rows={5}
@@ -77,6 +79,7 @@ class EventForm extends Component {
         defaultValue={this.state.durationUnit}
         onChange={this.onRadioChange}
         className="durationUnit"
+        floatingLabelStyle={{ color: 'black' }}
       >
         <RadioButton value="minutes" label="Minutes" />
         <RadioButton value="hours" label="Hours" />
@@ -91,6 +94,7 @@ class EventForm extends Component {
           hintText="ex: 15min, 30min,..."
           floatingLabelText="Estimated Duration"
           className="duration"
+          floatingLabelStyle={{ color: 'black' }}
         >
           {this.renderDuration('minutes', 5)}
         </Field>
@@ -103,6 +107,7 @@ class EventForm extends Component {
           component={SelectField}
           hintText="ex: 15hr, 30hr,..."
           floatingLabelText="Estimated Duration"
+          floatingLabelStyle={{ color: 'black' }}
         >
           {this.renderDuration('hours', 1)}
         </Field>
@@ -116,6 +121,7 @@ class EventForm extends Component {
         component={Checkbox}
         onChange={this.onTodoCheck}
         className="calendarCheck"
+        floatingLabelStyle={{ color: 'black' }}
       />
     );
 
@@ -129,6 +135,7 @@ class EventForm extends Component {
           component={DatePicker}
           format={null}
           className="startTime"
+          floatingLabelStyle={{ color: 'black' }}
         />
       );
       fields.push(
@@ -139,6 +146,7 @@ class EventForm extends Component {
             hintText="What time does it start?"
             component={TimePicker}
             format={null}
+            floatingLabelStyle={{ color: 'black' }}
           />
         </div>
       );

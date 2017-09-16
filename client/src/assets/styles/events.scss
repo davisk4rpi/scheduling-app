@@ -23,3 +23,15 @@
     margin-top: 50px;
   }
 }
+
+// index
+
+.collapsibleHeader {
+  &:hover {
+    cursor: pointer;
+  }
+  h3 {
+    padding: 10px;
+  }
+  background-color: $background-color-dark;
+}

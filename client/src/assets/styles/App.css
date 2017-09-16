@@ -5865,13 +5865,13 @@ button:focus {
 
 label {
   font-size: 0.8rem;
-  color: #9e9e9e; }
+  color: #2E7D32; }
 
 /* Text Inputs + Textarea
    ========================================================================== */
 /* Style Placeholders */
 ::placeholder {
-  color: #d1d1d1; }
+  color: #52bf57; }
 
 /* Text inputs */
 input:not([type]),
@@ -5889,7 +5889,7 @@ input[type=search]:not(.browser-default),
 textarea.materialize-textarea {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 1px solid #2E7D32;
   border-radius: 0;
   outline: none;
   height: 3rem;
@@ -6208,7 +6208,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
   .input-field.col .prefix ~ .validate ~ label {
     width: calc(100% - 3rem - 1.5rem); }
   .input-field label {
-    color: #9e9e9e;
+    color: #2E7D32;
     position: absolute;
     top: 0;
     left: 0;
@@ -6690,7 +6690,7 @@ select {
     cursor: pointer;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #9e9e9e;
+    border-bottom: 1px solid #2E7D32;
     outline: none;
     height: 3rem;
     line-height: 3rem;
@@ -8531,8 +8531,15 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   #eventForm .form-controls {
     margin-top: 50px; }
 
+.collapsibleHeader {
+  background-color: #9e9e9e; }
+  .collapsibleHeader:hover {
+    cursor: pointer; }
+  .collapsibleHeader h3 {
+    padding: 10px; }
+
 body {
-  background-color: #b3e5fc; }
+  background-color: #eeeeee; }
 
 h1,
 h2,
@@ -8547,7 +8554,7 @@ hr {
   border: 1px solid #43b548; }
 
 nav {
-  background-color: #b3e5fc; }
+  background-color: #eeeeee; }
   nav ul a {
     color: #2E7D32;
     font-weight: 500; }
@@ -8584,13 +8591,13 @@ nav {
 
 #header .active-nav {
   background-color: #2b387c;
-  color: #b3e5fc; }
+  color: #eeeeee; }
   #header .active-nav .material-icons.md-36 {
-    color: #b3e5fc; }
+    color: #eeeeee; }
 
 #footer.page-footer {
   color: #32408f;
-  background-color: #4fc3f7; }
+  background-color: #9e9e9e; }
   #footer.page-footer a:hover h6 {
     color: #32408f; }
   #footer.page-footer li,
