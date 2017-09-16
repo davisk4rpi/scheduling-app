@@ -52,21 +52,24 @@ class EventForm extends Component {
 
   renderFields() {
     const fields = [
-      <Field
-        key="name"
-        hintText="ex: Call Doctor's Office"
-        floatingLabelText="Task Title"
-        name="name"
-        component={TextField}
-      />,
+      <div>
+        <Field
+          key="name"
+          hintText="ex: Call Doctor's Office"
+          floatingLabelText="Task Title"
+          name="name"
+          component={TextField}
+        />
+      </div>,
       <Field
         key="description"
         name="description"
         component={TextField}
         hintText="ex: Need to make appointment for..."
         floatingLabelText="Task Description"
+        fullWidth
         multiLine
-        rows={3}
+        rows={5}
       />,
       <Field
         key="durationUnit"
@@ -74,6 +77,7 @@ class EventForm extends Component {
         component={RadioButtonGroup}
         defaultValue={this.state.durationUnit}
         onChange={this.onRadioChange}
+        className="durationUnit"
       >
         <RadioButton value="minutes" label="Minutes" />
         <RadioButton value="hours" label="Hours" />
@@ -87,6 +91,7 @@ class EventForm extends Component {
           component={SelectField}
           hintText="ex: 15min, 30min,..."
           floatingLabelText="Estimated Duration"
+          className="duration"
         >
           {this.renderDuration('minutes', 5)}
         </Field>
@@ -111,6 +116,7 @@ class EventForm extends Component {
         label="Check this to add task to your calendar"
         component={Checkbox}
         onChange={this.onTodoCheck}
+        className="calendarCheck"
       />
     );
 
@@ -123,17 +129,20 @@ class EventForm extends Component {
           hintText="What day does it start?"
           component={DatePicker}
           format={null}
+          className="startTime"
         />
       );
       fields.push(
-        <Field
-          key="startTimeTime"
-          name="startTimeTime"
-          label="Time"
-          hintText="What time does it start?"
-          component={TimePicker}
-          format={null}
-        />
+        <div className="startTime">
+          <Field
+            key="startTimeTime"
+            name="startTimeTime"
+            label="Time"
+            hintText="What time does it start?"
+            component={TimePicker}
+            format={null}
+          />
+        </div>
       );
     }
     return fields;
@@ -141,16 +150,18 @@ class EventForm extends Component {
 
   render() {
     return (
-      <div>
+      <div id="eventForm">
         <h2>New Task</h2>
         <form onSubmit={this.props.handleSubmit(this.props.handleEventSubmit)}>
           {this.renderFields()}
-          <Link className="btn-flat red white-text" to="/dashboard">
-            Cancel
-          </Link>
-          <button type="submit" className="btn-flat right blue white-text">
-            {this.props.submitButton}
-          </button>
+          <div className="form-controls">
+            <Link className="btn-flat red white-text" to="/dashboard">
+              Cancel
+            </Link>
+            <button type="submit" className="btn-flat right blue white-text">
+              {this.props.submitButton}
+            </button>
+          </div>
         </form>
       </div>
     );

@@ -21,6 +21,7 @@ $background-color-dark: color("light-blue", "lighten-2");
 $background-color-light: color("light-blue", "lighten-4");
 
 @import './oauth-buttons.css';
+@import './events.scss';
 // General
 body {
   background-color: $background-color-light;

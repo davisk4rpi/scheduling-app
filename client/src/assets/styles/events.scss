@@ -1,0 +1,25 @@
+// Event Form
+
+#eventForm {
+  max-width: 768px;
+  margin: 0 auto;
+  .durationUnit {
+    display: inline-block;
+    margin: 10px;
+    margin-right: 30px;
+  }
+  .duration {
+    margin: 20px;
+  }
+  .calendarCheck {
+    margin-top: 20px;
+  }
+  .startTime {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 30px;
+  }
+  .form-controls {
+    margin-top: 50px;
+  }
+}

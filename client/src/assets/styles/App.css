@@ -8513,6 +8513,24 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   stroke-linecap: round;
   /*shape-rendering: crispEdges;*/ }
 
+#eventForm {
+  max-width: 768px;
+  margin: 0 auto; }
+  #eventForm .durationUnit {
+    display: inline-block;
+    margin: 10px;
+    margin-right: 30px; }
+  #eventForm .duration {
+    margin: 20px; }
+  #eventForm .calendarCheck {
+    margin-top: 20px; }
+  #eventForm .startTime {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 30px; }
+  #eventForm .form-controls {
+    margin-top: 50px; }
+
 body {
   background-color: #b3e5fc; }
 
