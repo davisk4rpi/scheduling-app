@@ -171,6 +171,15 @@ class EventForm extends Component {
 function validate(values) {
   const errors = {};
 
+  if (values.calendarCheck) {
+    if (!values['startTimeTime']) {
+      errors['startTimeTime'] = 'You must provide a Start Time';
+    }
+    if (!values['startTimeDate']) {
+      errors['startTimeDate'] = 'You must provide a Start Date';
+    }
+  }
+
   if (!values['name']) {
     errors['name'] = 'You must provide a Title';
   }
