@@ -19,7 +19,7 @@ module.exports = app => {
       _id: {
         $in: eventIds
       }
-    });
+    }).sort({ startTime: 1 });
     res.send(events);
   });
 
