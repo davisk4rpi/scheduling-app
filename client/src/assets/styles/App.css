@@ -5865,13 +5865,13 @@ button:focus {
 
 label {
   font-size: 0.8rem;
-  color: #2E7D32; }
+  color: #9e9e9e; }
 
 /* Text Inputs + Textarea
    ========================================================================== */
 /* Style Placeholders */
 ::placeholder {
-  color: #52bf57; }
+  color: #d1d1d1; }
 
 /* Text inputs */
 input:not([type]),
@@ -5889,7 +5889,7 @@ input[type=search]:not(.browser-default),
 textarea.materialize-textarea {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #2E7D32;
+  border-bottom: 1px solid #9e9e9e;
   border-radius: 0;
   outline: none;
   height: 3rem;
@@ -6208,7 +6208,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
   .input-field.col .prefix ~ .validate ~ label {
     width: calc(100% - 3rem - 1.5rem); }
   .input-field label {
-    color: #2E7D32;
+    color: #9e9e9e;
     position: absolute;
     top: 0;
     left: 0;
@@ -6690,7 +6690,7 @@ select {
     cursor: pointer;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #2E7D32;
+    border-bottom: 1px solid #9e9e9e;
     outline: none;
     height: 3rem;
     line-height: 3rem;
