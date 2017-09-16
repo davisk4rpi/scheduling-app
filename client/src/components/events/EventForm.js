@@ -87,30 +87,43 @@ class EventForm extends Component {
     ];
     if (this.state.durationUnit === 'minutes') {
       fields.push(
-        <Field
-          key="duration"
-          name="duration"
-          component={SelectField}
-          hintText="ex: 15min, 30min,..."
-          floatingLabelText="Estimated Duration"
-          className="duration"
-          floatingLabelStyle={{ color: 'black' }}
-        >
-          {this.renderDuration('minutes', 5)}
-        </Field>
+        <div>
+          <Field
+            key="duration"
+            name="duration"
+            component={SelectField}
+            hintText="ex: 15min, 30min,..."
+            floatingLabelText="Estimated Duration"
+            className="duration"
+            floatingLabelStyle={{ color: 'black' }}
+          >
+            {this.renderDuration('minutes', 5)}
+          </Field>
+          <button className="btn-flat grey durationButton">5 min</button>
+          <button className="btn-flat grey durationButton">15 min</button>
+          <button className="btn-flat grey durationButton">30 min</button>
+          <button className="btn-flat grey durationButton">1 hr</button>
+          <button className="btn-flat grey durationButton">other</button>
+        </div>
       );
     } else {
       fields.push(
-        <Field
-          key="duration"
-          name="duration"
-          component={SelectField}
-          hintText="ex: 15hr, 30hr,..."
-          floatingLabelText="Estimated Duration"
-          floatingLabelStyle={{ color: 'black' }}
-        >
-          {this.renderDuration('hours', 1)}
-        </Field>
+        <div>
+          <Field
+            key="duration"
+            name="duration"
+            component={SelectField}
+            hintText="ex: 15hr, 30hr,..."
+            floatingLabelText="Estimated Duration"
+            floatingLabelStyle={{ color: 'black' }}
+          >
+            {this.renderDuration('hours', 1)}
+          </Field>
+          <button className="btn-flat">5 min</button>
+          <button className="btn-flat">15 min</button>
+          <button className="btn-flat">30 min</button>
+          <button className="btn-flat">1 hr</button>
+        </div>
       );
     }
     fields.push(
