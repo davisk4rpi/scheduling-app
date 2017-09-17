@@ -5,8 +5,18 @@
     display: inline-block;
     margin: 10px;
     margin-right: 30px; }
+  #eventForm .durationUnitGroup button {
+    display: block; }
   #eventForm .duration {
     margin: 20px; }
+  #eventForm .durationButton {
+    text-transform: lowercase;
+    width: 120px;
+    color: #fff;
+    margin: 10px;
+    background-color: color("blue", "darken-2"); }
+    #eventForm .durationButton.active {
+      background-color: color("green", "base"); }
   #eventForm .calendarCheck {
     margin-top: 20px; }
   #eventForm .startTime {
