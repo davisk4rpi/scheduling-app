@@ -13,6 +13,7 @@ class EventNew extends Component {
     return (
       <div>
         <EventForm
+          formTitle="New Task"
           initialValues={{ duration: 5 }}
           submitButton="Add Event"
           handleEventSubmit={this.onEventSubmit}

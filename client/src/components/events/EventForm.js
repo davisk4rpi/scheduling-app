@@ -104,7 +104,9 @@ class EventForm extends Component {
   render() {
     return (
       <div id="eventForm">
-        <h2>New Task</h2>
+        <h2>
+          {this.props.formTitle}
+        </h2>
         <form onSubmit={this.props.handleSubmit(this.props.handleEventSubmit)}>
           {this.renderFields()}
           <div className="form-controls">

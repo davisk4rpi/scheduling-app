@@ -49,6 +49,7 @@ class EventEdit extends Component {
     return (
       <div>
         <EventForm
+          formTitle="Edit Task"
           initialValues={values}
           enableReinitialize
           todo={todo}
