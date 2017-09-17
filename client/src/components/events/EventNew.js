@@ -13,10 +13,7 @@ class EventNew extends Component {
     return (
       <div>
         <EventForm
-          initialValues={{
-            durationUnit: 'minutes',
-            duration: 30
-          }}
+          initialValues={{ duration: 5 }}
           submitButton="Add Event"
           handleEventSubmit={this.onEventSubmit}
         />

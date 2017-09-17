@@ -25,23 +25,14 @@ module.exports = app => {
 
   // Creates a new event
   app.post('/api/events', requireLogin, async (req, res) => {
-    let {
-      description,
-      duration,
-      durationUnit,
-      name,
-      calendarCheck,
-      startTime
-    } = req.body;
-    duration *= durationUnit === 'hours' ? 60 : 1;
-    let values = {
+    let { description, duration, name, calendarCheck, startTime } = req.body;
+    const event = new Event({
       description,
       duration,
       name,
       startTime,
       calendarCheck
-    };
-    const event = new Event(values);
+    });
     try {
       const user = await User.findById(req.user.id);
       const savedEvent = await event.save();
@@ -55,24 +46,15 @@ module.exports = app => {
 
   // Updates a current event
   app.put('/api/events/:id', requireLogin, async (req, res) => {
-    let {
-      description,
-      duration,
-      durationUnit,
-      name,
-      calendarCheck,
-      startTime
-    } = req.body;
-    duration *= durationUnit === 'hours' ? 60 : 1;
-    let values = {
-      description,
-      duration,
-      name,
-      startTime,
-      calendarCheck
-    };
+    let { description, duration, name, calendarCheck, startTime } = req.body;
     try {
-      const event = await Event.findByIdAndUpdate(req.params.id, values);
+      const event = await Event.findByIdAndUpdate(req.params.id, {
+        description,
+        duration,
+        name,
+        startTime,
+        calendarCheck
+      });
       const user = await User.findById(req.user.id);
       res.send(user);
     } catch (err) {

@@ -28,6 +28,10 @@ class EventForm extends Component {
     this.setState({ todo: !this.state.todo });
   }
 
+  handleDurationChange = value => {
+    this.props.change('duration', value);
+  };
+
   renderFields() {
     const fields = [
       <div key="name">
@@ -52,6 +56,7 @@ class EventForm extends Component {
       />,
       <Field
         key="duration"
+        handleDurationChange={this.handleDurationChange}
         name="duration"
         component={DurationField}
         className="duration"

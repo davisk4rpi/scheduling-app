@@ -13,12 +13,15 @@ class DurationField extends Component {
   }
 
   handleValueChange = value => {
-    console.log(value);
     this.setState({ value });
+    this.props.handleDurationChange(value);
   };
 
   toggleCustom = () => {
-    this.setState({ custom: !this.state.custom });
+    this.setState({
+      custom: !this.state.custom
+    });
+    this.handleValueChange(5);
   };
 
   renderButtons() {
@@ -38,12 +41,13 @@ class DurationField extends Component {
   }
 
   render() {
+    const { input } = this.props;
     let content = (
       <div>
         {this.renderButtons()}
-        <button className="btn-flat durationButton" onClick={this.toggleCustom}>
+        <div className="btn-flat durationButton" onClick={this.toggleCustom}>
           other
-        </button>
+        </div>
       </div>
     );
 
@@ -51,18 +55,15 @@ class DurationField extends Component {
       content = (
         <div>
           <DurationCustom handleValueChange={this.handleValueChange} />
-          <button
-            className="btn-flat durationButton"
-            onClick={this.toggleCustom}
-          >
+          <div className="btn-flat durationButton" onClick={this.toggleCustom}>
             back
-          </button>
+          </div>
         </div>
       );
     }
     return (
       <div>
-        <input type="hidden" value={this.state.value} />
+        <input {...input} type="hidden" value={this.state.value} />
         {content}
       </div>
     );

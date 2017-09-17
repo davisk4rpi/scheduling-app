@@ -45,7 +45,6 @@ class EventEdit extends Component {
         startTimeDate
       };
     }
-    values['durationUnit'] = 'minutes';
     let todo = values.calendarCheck ? true : false;
     return (
       <div>
