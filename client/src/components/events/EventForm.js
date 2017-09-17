@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { reduxForm, Field } from 'redux-form';
@@ -6,21 +5,16 @@ import {
   TextField,
   Checkbox,
   DatePicker,
-  TimePicker,
-  RadioButtonGroup,
-  SelectField
+  TimePicker
 } from 'redux-form-material-ui';
-import { RadioButton } from 'material-ui/RadioButton';
-import MenuItem from 'material-ui/MenuItem';
+import DurationField from './DurationField';
 
 class EventForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todo: false,
-      durationUnit: 'minutes'
+      todo: false
     };
-    this.onRadioChange = this.onRadioChange.bind(this);
     this.onTodoCheck = this.onTodoCheck.bind(this);
   }
 
@@ -28,22 +22,6 @@ class EventForm extends Component {
     if (nextProps.todo && !this.state.todo) {
       this.onTodoCheck();
     }
-  }
-
-  renderDuration(unit, inc) {
-    let increment = 0;
-    let list = [];
-    while (increment < 120) {
-      increment += inc;
-      list.push(increment);
-    }
-    return _.map(list, num => {
-      return <MenuItem value={num} key={num} primaryText={`${num} ${unit}`} />;
-    });
-  }
-
-  onRadioChange(event) {
-    this.setState({ durationUnit: event.target.value });
   }
 
   onTodoCheck(event) {
@@ -73,59 +51,13 @@ class EventForm extends Component {
         rows={5}
       />,
       <Field
-        key="durationUnit"
-        name="durationUnit"
-        component={RadioButtonGroup}
-        defaultValue={this.state.durationUnit}
-        onChange={this.onRadioChange}
-        className="durationUnit"
-        floatingLabelStyle={{ color: 'black' }}
-      >
-        <RadioButton value="minutes" label="Minutes" />
-        <RadioButton value="hours" label="Hours" />
-      </Field>
+        key="duration"
+        name="duration"
+        component={DurationField}
+        className="duration"
+      />
     ];
-    if (this.state.durationUnit === 'minutes') {
-      fields.push(
-        <div>
-          <Field
-            key="duration"
-            name="duration"
-            component={SelectField}
-            hintText="ex: 15min, 30min,..."
-            floatingLabelText="Estimated Duration"
-            className="duration"
-            floatingLabelStyle={{ color: 'black' }}
-          >
-            {this.renderDuration('minutes', 5)}
-          </Field>
-          <button className="btn-flat grey durationButton">5 min</button>
-          <button className="btn-flat grey durationButton">15 min</button>
-          <button className="btn-flat grey durationButton">30 min</button>
-          <button className="btn-flat grey durationButton">1 hr</button>
-          <button className="btn-flat grey durationButton">other</button>
-        </div>
-      );
-    } else {
-      fields.push(
-        <div>
-          <Field
-            key="duration"
-            name="duration"
-            component={SelectField}
-            hintText="ex: 15hr, 30hr,..."
-            floatingLabelText="Estimated Duration"
-            floatingLabelStyle={{ color: 'black' }}
-          >
-            {this.renderDuration('hours', 1)}
-          </Field>
-          <button className="btn-flat">5 min</button>
-          <button className="btn-flat">15 min</button>
-          <button className="btn-flat">30 min</button>
-          <button className="btn-flat">1 hr</button>
-        </div>
-      );
-    }
+
     fields.push(
       <Field
         key="calendar"
@@ -134,7 +66,6 @@ class EventForm extends Component {
         component={Checkbox}
         onChange={this.onTodoCheck}
         className="calendarCheck"
-        floatingLabelStyle={{ color: 'black' }}
       />
     );
 
@@ -148,7 +79,6 @@ class EventForm extends Component {
           component={DatePicker}
           format={null}
           className="startTime"
-          floatingLabelStyle={{ color: 'black' }}
         />
       );
       fields.push(
@@ -159,7 +89,6 @@ class EventForm extends Component {
             hintText="What time does it start?"
             component={TimePicker}
             format={null}
-            floatingLabelStyle={{ color: 'black' }}
           />
         </div>
       );

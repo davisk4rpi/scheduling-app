@@ -8520,8 +8520,18 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     display: inline-block;
     margin: 10px;
     margin-right: 30px; }
+  #eventForm .durationUnitGroup button {
+    display: block; }
   #eventForm .duration {
     margin: 20px; }
+  #eventForm .durationButton {
+    text-transform: lowercase;
+    width: 120px;
+    color: #fff;
+    margin: 10px;
+    background-color: #1976D2; }
+    #eventForm .durationButton.active {
+      background-color: #4CAF50; }
   #eventForm .calendarCheck {
     margin-top: 20px; }
   #eventForm .startTime {
