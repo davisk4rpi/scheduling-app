@@ -6,13 +6,13 @@ const keys = require('../config/keys');
 
 const User = mongoose.model('user');
 
-passport.serializeUser((user, done) => {
-  done(null, user);
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
 });
 
-passport.deserializeUser((id, done) => {
-  User.findById(id).then(user => {
-    done(null, user);
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
   });
 });
 
@@ -34,7 +34,7 @@ passport.use(
         if (existingUser.googleId === profile.id) {
           return done(null, existingUser);
         } else {
-          const updatedUser = await existingUser.update({
+          const updatedUser = await User.findOneAndUpdate(existingUser.id, {
             googleId: profile.id
           });
           return done(null, updatedUser);
@@ -69,7 +69,7 @@ passport.use(
         if (existingUser.facebookId === profile.id) {
           return done(null, existingUser);
         } else {
-          const updatedUser = await existingUser.update({
+          const updatedUser = await User.findOneAndUpdate(existingUser.id, {
             facebookId: profile.id
           });
           return done(null, updatedUser);
