@@ -4,9 +4,7 @@ import { FETCH_USER, FETCH_EVENTS, FETCH_EVENT } from './types';
 import timeJoin from './helpers/timeJoin';
 
 export const fetchUser = () => async dispatch => {
-  console.log(10);
   const res = await axios.get('/api/current_user');
-  console.log(res);
   // all import info is attached to the 'data' property of the response
   dispatch({ type: FETCH_USER, payload: res.data });
 };
