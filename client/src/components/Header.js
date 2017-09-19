@@ -40,7 +40,7 @@ class Header extends Component {
               to={this.props.auth ? '/dashboard' : '/'}
               className="left brand-logo"
             >
-              Schedulizer
+              EZ Flex Planner
             </Link>
             <ul className="right">
               {this.renderContent()}
