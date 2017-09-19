@@ -5,6 +5,7 @@ $primary-color-dark: darken($primary-color, 15%) !default;
 
 $secondary-color: color("indigo", "base") !default;
 $secondary-color-dark: darken($secondary-color, 15%) !default;
+$secondary-color-light: lighten($secondary-color, 15%) !default;
 
 $input-success-color: color("green", "base") !default;
 $input-error-color: color("red", "base") !default;
@@ -116,5 +117,23 @@ nav {
   }
   .social-media {
     margin: 8px;
+  }
+}
+
+// Landing Page
+
+#landingPage {
+  .login-btn,
+  .signup-btn {
+    margin: 10px;
+    color: white;
+    font-weight: 700;
+  }
+  .login-btn {
+    background-color: $primary-color-light;
+  }
+
+  .signup-btn {
+    background-color: $secondary-color-light;
   }
 }

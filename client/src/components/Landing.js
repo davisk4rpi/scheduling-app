@@ -3,14 +3,23 @@ import { Link } from 'react-router-dom';
 
 const Landing = () => {
   return (
-    <div>
-      <h1>Welcome to Schedulizer</h1>
-      <Link to="/login" className="btn-flat grey">
-        Log In
-      </Link>
-      <Link to="/signup" className="btn-flat grey">
-        Sign Up
-      </Link>
+    <div id="landingPage">
+      <section className="center">
+        <h1>Welcome to EZ Flex Planner</h1>
+        <h2>
+          We make planning you day easier by providing the flexibility you need.
+        </h2>
+      </section>
+      <section className="row">
+        <div className="col m8 offset-m2 s12 center">
+          <Link to="/login" className="btn-flat btn-large login-btn">
+            Log In
+          </Link>
+          <Link to="/signup" className="btn-flat btn-large signup-btn">
+            Sign Up
+          </Link>
+        </div>
+      </section>
     </div>
   );
 };

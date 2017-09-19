@@ -8615,3 +8615,15 @@ nav {
     display: inline-block; }
   #footer.page-footer .social-media {
     margin: 8px; }
+
+#landingPage .login-btn,
+#landingPage .signup-btn {
+  margin: 10px;
+  color: white;
+  font-weight: 700; }
+
+#landingPage .login-btn {
+  background-color: #43b548; }
+
+#landingPage .signup-btn {
+  background-color: #7280ce; }
