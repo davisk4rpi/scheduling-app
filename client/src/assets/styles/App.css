@@ -8627,3 +8627,6 @@ nav {
 
 #landingPage .signup-btn {
   background-color: #7280ce; }
+
+#dashboard .btn-floating {
+  margin: 10px; }

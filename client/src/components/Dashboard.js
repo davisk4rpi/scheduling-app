@@ -6,8 +6,10 @@ import EventList from './events/EventList';
 class Dashboard extends Component {
   render() {
     return (
-      <section>
-        <Link to="/events/new" className="btn btn-flat green white-text">New Event</Link>
+      <section id="dashboard">
+        <Link to="/events/new" className="green white-text btn-floating">
+          <i className="material-icons">add</i>
+        </Link>
         <EventList />
       </section>
     );
