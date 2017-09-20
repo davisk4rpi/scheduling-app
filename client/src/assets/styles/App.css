@@ -8561,6 +8561,8 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     display: inline-block; }
   .event-card .title {
     font-size: 1.5rem; }
+  .event-card .duration {
+    margin-left: 5px; }
 
 body {
   background-color: #eeeeee; }
@@ -8644,6 +8646,3 @@ nav {
 
 #dashboard .btn-floating {
   margin: 10px; }
-
-#dashboard .card-title:first-child {
-  float: left; }

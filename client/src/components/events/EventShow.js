@@ -14,15 +14,17 @@ class EventShow extends Component {
 
   render() {
     const { event, date } = this.props;
+    let { duration } = event;
+    let unit = 'min';
+    if (duration >= 60 && [0, 30].includes(duration % 60)) {
+      duration /= 60;
+      unit = 'hr';
+    }
     let details;
     if (this.state.expanded) {
       details = [
         <p key={1}>
           {event.description}
-        </p>,
-
-        <p key={2} className="right-align">
-          Estimated: {event.duration} min
         </p>
       ];
     }
@@ -50,6 +52,9 @@ class EventShow extends Component {
           </icon>
           <span className="title">
             {event.name}
+          </span>
+          <span className="duration">
+            ({duration} {unit})
           </span>
           {details}
           {date}

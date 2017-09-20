@@ -46,3 +46,5 @@
     display: inline-block; }
   .event-card .title {
     font-size: 1.5rem; }
+  .event-card .duration {
+    margin-left: 5px; }
