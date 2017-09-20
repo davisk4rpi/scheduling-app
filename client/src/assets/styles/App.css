@@ -8548,6 +8548,20 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .collapsibleHeader h3 {
     padding: 10px; }
 
+.event-card {
+  border-radius: 2px;
+  padding: 15px;
+  margin: 5px; }
+  .event-card .event-card-action {
+    width: 15%;
+    display: inline-block;
+    vertical-align: top; }
+  .event-card .event-card-content {
+    width: 85%;
+    display: inline-block; }
+  .event-card .title {
+    font-size: 1.5rem; }
+
 body {
   background-color: #eeeeee; }
 
@@ -8630,3 +8644,6 @@ nav {
 
 #dashboard .btn-floating {
   margin: 10px; }
+
+#dashboard .card-title:first-child {
+  float: left; }

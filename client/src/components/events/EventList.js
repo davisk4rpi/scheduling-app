@@ -48,9 +48,19 @@ class EventList extends Component {
 
     const scheduledEventIndex = scheduledEvents.map(event => {
       const time = new Date(event.startTime);
+      const dateOptions = {
+        weekday: 'short',
+        month: 'numeric',
+        day: 'numeric'
+      };
+      const timeOptions = {
+        hour: 'numeric',
+        minute: 'numeric'
+      };
       const date = (
         <div className="card-action">
-          {time.toLocaleDateString()} at {time.toLocaleTimeString()}
+          {time.toLocaleString('en-US', dateOptions)} at{' '}
+          {time.toLocaleString('en-US', timeOptions)}
         </div>
       );
       return (

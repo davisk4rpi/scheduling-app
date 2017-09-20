@@ -14,44 +14,46 @@ class EventShow extends Component {
 
   render() {
     const { event, date } = this.props;
-    let details, buttons;
+    let details;
     if (this.state.expanded) {
       details = [
         <p key={1}>
           {event.description}
         </p>,
-        <p key={2} className="right">
-          Estimated Time: {event.duration} min
+
+        <p key={2} className="right-align">
+          Estimated: {event.duration} min
         </p>
-      ];
-      buttons = [
-        <button
-          key={3}
-          className="btn red right"
-          onClick={this.props.onDeleteClick}
-        >
-          delete
-        </button>,
-        <button
-          key={4}
-          className="btn red blue right"
-          onClick={this.props.onEditClick}
-        >
-          edit
-        </button>
       ];
     }
 
     return (
-      <div className="card darken-1 blue-grey" onClick={this.handleExpansion}>
-        <div className="card-content white-text">
-          {buttons}
-          <span className="card-title">
+      <div
+        className="event-card darken-1 blue-grey white-text"
+        onClick={this.handleExpansion}
+      >
+        <div className="event-card-action">
+          <icon
+            key={3}
+            className="material-icons"
+            onClick={this.props.onEditClick}
+          >
+            edit
+          </icon>
+        </div>
+        <div className="event-card-content">
+          <icon
+            className="material-icons right"
+            onClick={this.props.onDeleteClick}
+          >
+            delete_forever
+          </icon>
+          <span className="title">
             {event.name}
           </span>
           {details}
+          {date}
         </div>
-        {date}
       </div>
     );
   }
