@@ -8651,5 +8651,8 @@ nav {
 #landingPage .signup-btn {
   background-color: #7280ce; }
 
+#loginBox {
+  margin-top: 25%; }
+
 #dashboard .btn-floating {
   margin: 10px; }
