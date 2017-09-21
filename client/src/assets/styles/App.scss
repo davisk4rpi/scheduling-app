@@ -25,7 +25,14 @@ $background-color-light: color("grey", "lighten-3");
 @import './oauth-buttons.css';
 @import './events.scss';
 // General
-body {
+#main {
+  flex: 1 0 auto;
+}
+body,
+#root > div {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   background-color: $background-color-light;
 }
 

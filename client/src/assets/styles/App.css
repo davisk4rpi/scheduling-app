@@ -8564,7 +8564,14 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .event-card .duration {
     margin-left: 5px; }
 
-body {
+#main {
+  flex: 1 0 auto; }
+
+body,
+#root > div {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   background-color: #eeeeee; }
 
 h1,

@@ -6,6 +6,7 @@ import * as actions from '../actions';
 
 import Landing from './Landing';
 import Header from './Header';
+import Footer from './Footer';
 import Login from './Login';
 import Dashboard from './Dashboard';
 import EventNew from './events/EventNew';
@@ -22,7 +23,7 @@ class App extends Component {
         <MuiThemeProvider>
           <div className="">
             <Header />
-            <div className="container">
+            <div className="container" id="main">
               <Route exact path="/" component={Landing} />
               <Route
                 exact
@@ -42,6 +43,7 @@ class App extends Component {
               <Route exact path="/events/new" component={EventNew} />
               <Route exact path="/events/:id/edit" component={EventEdit} />
             </div>
+            <Footer />
           </div>
         </MuiThemeProvider>
       </BrowserRouter>
